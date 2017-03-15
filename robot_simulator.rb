@@ -1,6 +1,9 @@
+require 'pry'
+
 class Robot
 
 	attr_reader :direction
+
 
 
 
@@ -22,20 +25,22 @@ class Robot
 	end
 
 	def turn_right
-	 	
-	 	index = directions.index(@direction)
-	 	index += 1
-		directions[index]
 
-	 	# if @direction == :north
-	 	# 	@direction = :east
-	 	# elsif @direction == :east
+
+
+		
+
+
+	 	if @direction == :west
+	 		@direction = :north
+	 	else
+	 		@direction = directions[directions.index(@direction)+1]
 	 	# 	@direction = :south
 	 	# elsif @direction == :south
 	 	# 	@direction = :west
 	 	# elsif @direction == :west
 	 	# 	@direction = :north
-	 	# end
+	 	end
 	end
 
 end
