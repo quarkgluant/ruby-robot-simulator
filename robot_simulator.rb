@@ -36,6 +36,8 @@ class Robot
 end
 
 class Simulator
+  attr_accessor :robot
+
   def instructions(directions)
     instructions = { 'L' => :turn_left , 'A' => :advance, 'R' => :turn_right }
     output = []
@@ -43,6 +45,11 @@ class Simulator
     output
   end
 
-  def place
+  def place(robot, x: a, y: b ,direction: dir)
+    robot.at(x, y)
+    robot.bearing = direction
+  end
+  def evaluate(robot, instruct)
+  instructions(instruct).each { | direction| robot.send(direction) }
   end
 end

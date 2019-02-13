@@ -69,7 +69,7 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_turn_left_from_south
-    skip
+    #skip
     robot.orient(:south)
     robot.turn_left
     assert_equal :east, robot.bearing
@@ -154,7 +154,7 @@ class RobotSimulatorTest < Minitest::Test
   end
 
   def test_instruct_robot
-    skip
+  #  skip
     robot = Robot.new
     simulator.place(robot, x: -2, y: 1, direction: :east)
     simulator.evaluate(robot, 'RLAALAL')
@@ -163,7 +163,7 @@ class RobotSimulatorTest < Minitest::Test
   end
 
   def test_instruct_many_robots # rubocop:disable Metrics/MethodLength
-    skip
+    # skip
     robot1 = Robot.new
     robot2 = Robot.new
     robot3 = Robot.new
