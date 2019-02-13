@@ -89,13 +89,13 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_other_robot_coordinates
-    skip
+    # skip
     robot.at(-2, 5)
     assert_equal [-2, 5], robot.coordinates
   end
 
   def test_advance_when_facing_north
-    skip
+    # skip
     robot.at(0, 0)
     robot.orient(:north)
     robot.advance
@@ -103,7 +103,7 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_advance_when_facing_east
-    skip
+    # skip
     robot.at(0, 0)
     robot.orient(:east)
     robot.advance
@@ -111,7 +111,7 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_advance_when_facing_south
-    skip
+    # skip
     robot.at(0, 0)
     robot.orient(:south)
     robot.advance
@@ -119,7 +119,7 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_advance_when_facing_west
-    skip
+    # skip
     robot.at(0, 0)
     robot.orient(:west)
     robot.advance
@@ -133,22 +133,22 @@ class RobotSimulatorTest < Minitest::Test
   end
 
   def test_instructions_for_turning_left
-    skip
+    # skip
     assert_equal [:turn_left], simulator.instructions('L')
   end
 
   def test_instructions_for_turning_right
-    skip
+    # skip
     assert_equal [:turn_right], simulator.instructions('R')
   end
 
   def test_instructions_for_advancing
-    skip
+    # skip
     assert_equal [:advance], simulator.instructions('A')
   end
 
   def test_series_of_instructions
-    skip
+    # skip
     commands = [:turn_right, :advance, :advance, :turn_left]
     assert_equal commands, simulator.instructions('RAAL')
   end

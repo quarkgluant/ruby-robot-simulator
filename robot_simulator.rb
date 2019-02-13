@@ -27,4 +27,22 @@ class Robot
     @coordinates = [x, y]
   end
 
+  def advance
+    one_case = { east: [1, 0], north: [0, 1], west: [-1, 0], south: [0, -1] }
+    @coordinates[0] += one_case[@bearing][0]
+    @coordinates[1] += one_case[@bearing][1]
+  end
+
+end
+
+class Simulator
+  def instructions(directions)
+    instructions = { 'L' => :turn_left , 'A' => :advance, 'R' => :turn_right }
+    output = []
+    directions.split('').each { | direction| output << instructions[direction] }
+    output
+  end
+
+  def place
+  end
 end
